@@ -10,12 +10,12 @@ import (
 
 // PGConn represents the PG connection cred type
 type PGConn struct {
-	Host     string `validate:"required"`
-	Port     string `validate:"required,numeric"`
-	User     string `validate:"required"`
-	Password string `validate:"required"`
-	Dbname   string `validate:"required"`
-	Sslmode  string `validate:"required"`
+	Host     string `validate:"required" yaml:"host" json:"host"`
+	Port     string `validate:"required,numeric" yaml:"port"  json:"port"`
+	User     string `validate:"required" yaml:"user" json:"user"`
+	Password string `validate:"required" yaml:"password" json:"password"`
+	Dbname   string `validate:"required" yaml:"name" json:"name"`
+	Sslmode  string `validate:"required" yaml:"sslmode" json:"sslmode"`
 }
 
 // String returns the string representation of PGConn
