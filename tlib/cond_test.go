@@ -9,7 +9,7 @@ import (
 )
 
 func Test_Cond_Tiff(t *testing.T) {
-	assert.NotNil(t, Tiff(true, "a", "b"), "a")
-	assert.NotNil(t, Tiff(false, "a", "b"), "b")
-	assert.NotNil(t, Tiff(true, 1, 2), 1)
+	assert.Equal(t, Tiff(true, "a", "b"), "a")
+	assert.Equal(t, Tiff(false, "a", "b"), "b")
+	assert.Equal(t, Tiff(true, 1, 2), 1)
 }
