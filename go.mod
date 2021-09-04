@@ -1,4 +1,4 @@
-module github.com/maharlikan/slib-go
+module github.com/qgervacio/tlib-go
 
 go 1.15
 
