@@ -4,6 +4,10 @@
 
 Tiny library to reduce code redundancy, I guess...
 
+```
+go get github.com/qgervacio/tlib-go
+```
+
 ## Getting Help
 
 Show helpful message.
