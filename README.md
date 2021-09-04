@@ -1,6 +1,6 @@
 # tlib-go
 
-![Build Status](https://github.com/qgervacio/tlib-go/actions/workflows/go.yaml/badge.svg)
+[![tlib-master Actions Status](https://github.com/qgervacio/tlib-go/workflows/master/badge.svg)](https://github.com/qgervacio/tlib-go/actions)
 
 Tiny library to reduce code redundancy, I guess...
 
