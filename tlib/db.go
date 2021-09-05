@@ -11,25 +11,25 @@ import (
 // PGConn represents the PG connection cred type
 type PGConn struct {
 	Host     string `validate:"required" yaml:"host" json:"host"`
-	Port     string `validate:"required,numeric" yaml:"port"  json:"port"`
+	Port     int    `validate:"required,numeric" yaml:"port"  json:"port"`
 	User     string `validate:"required" yaml:"user" json:"user"`
 	Password string `validate:"required" yaml:"password" json:"password"`
 	Dbname   string `validate:"required" yaml:"name" json:"name"`
-	Sslmode  string `validate:"required" yaml:"sslmode" json:"sslmode"`
+	Extras   string `yaml:"extras" json:"extras"`
 }
 
 // String returns the string representation of PGConn
 func (p *PGConn) String() string {
 	return fmt.Sprintf(
-		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
-		p.Host, p.Port, p.User, p.Password, p.Dbname, p.Sslmode)
+		"postgres://%s:%s@%s:%d/%s?%s",
+		p.User, p.Password, p.Host, p.Port, p.Dbname, p.Extras)
 }
 
 // Peek returns the string representation of PGConn without password
 func (p *PGConn) Peek() string {
 	return fmt.Sprintf(
-		"host=%s port=%s user=%s dbname=%s sslmode=%s",
-		p.Host, p.Port, p.User, p.Dbname, p.Sslmode)
+		"postgres://%s:***@%s:%d/%s?%s",
+		p.User, p.Host, p.Port, p.Dbname, p.Extras)
 }
 
 // Validate the values
